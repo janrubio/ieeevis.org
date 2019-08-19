@@ -89,7 +89,7 @@ tr:last-child {
 }
 
 hr {
-  @apply border-b-2 border-green-500 border-dashed relative mb-4;
+  @apply border-b-2 border-green-500 border-dashed relative;
 }
 
 hr::after {
@@ -126,4 +126,33 @@ nav ul {
 nav li:before {
   content: '';
   @apply m-0;
+}
+
+/* CSS shapes */
+
+.polygon-secondary {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 75% 100%, 70% 90%, 0 90%);
+  shape-outside: polygon(0 0, 100% 0, 100% 100%, 75% 100%, 70% 90%, 0 90%);
+  height: auto;
+  @apply bg-blue-700 p-8 text-white w-full;
+}
+
+.polygon-primary {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 78% 100%, 70% 82%, 0 82%);
+  shape-outside: polygon(0 0, 100% 0, 100% 100%, 78% 100%, 70% 82%, 0 82%);
+  height: 340px;
+  @apply bg-blue-600 w-full flex flex-col justify-between;
+}
+
+.line {
+  @apply border-b-2 border-white border-dashed w-1/5 self-end mb-4 relative;
+}
+
+.line::before {
+  @apply border-white border-2 absolute rounded-full;
+  content: "";
+  left: -14px;
+  top: -3px;
+  width: 8px;
+  height: 8px;
 }
